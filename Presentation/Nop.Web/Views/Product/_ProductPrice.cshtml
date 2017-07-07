@@ -1,0 +1,11 @@
+﻿@model ProductDetailsModel.ProductPriceModel
+@using Nop.Core
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Catalog;
+@if (!Model.CustomerEntersPrice)
+{
+    <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+       <span class="amount">@Html.Raw(Model.Price)</span>
+    </p>
+}

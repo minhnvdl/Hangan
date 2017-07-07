@@ -1,0 +1,7 @@
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\bin\Nop.Admin.dll.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\bin\Nop.Admin.dll
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\bin\Nop.Admin.pdb
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csproj.App.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb

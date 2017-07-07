@@ -1,0 +1,15 @@
+﻿@model OrderTotalsModel
+@using Nop.Web.Models.ShoppingCart;
+<div class="total-info">
+
+    <label>@T("ShoppingCart.Totals.OrderTotal"):</label>
+
+    @if (!String.IsNullOrEmpty(Model.OrderTotal))
+    {
+        <span class="value-summary"><strong>@Model.OrderTotal</strong></span>
+    }
+    else
+    {
+        <span>@T("ShoppingCart.Totals.CalculatedDuringCheckout")</span>
+    }
+</div>

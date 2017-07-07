@@ -1,0 +1,16 @@
+﻿@model ProductDetailsModel
+@using Nop.Web.Models.Catalog;
+@{
+    Html.AddScriptParts("~/Scripts/fotorama.js");
+    Html.AddCssFileParts("~/Themes/DefaultClean/Content/css/fotorama.css");
+}
+@{
+    <div class="fotorama">
+        @foreach (var picture in Model.PictureModels)
+        {
+
+        <img src="@picture.ThumbImageUrl" alt="@picture.AlternateText" title="@picture.Title" data-defaultsize="@picture.ImageUrl" data-fullsize="@picture.FullSizeImageUrl" />
+
+        }
+    </div>
+}

@@ -1,0 +1,175 @@
+﻿@model ProductDetailsModel
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Models.Catalog;
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    //title
+    Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Name);
+    //meta
+    Html.AddMetaDescriptionParts(Model.MetaDescription);
+    Html.AddMetaKeywordParts(Model.MetaKeywords);
+    //page class
+    Html.AppendPageCssClassParts("html-product-details-page");
+
+    var seoSettings = EngineContext.Current.Resolve<SeoSettings>();
+
+    //canonical URL
+    if (seoSettings.CanonicalUrlsEnabled)
+    {
+        var productUrl = Url.RouteUrl("Product", new { SeName = Model.SeName }, this.Request.Url.Scheme);
+        Html.AddCanonicalUrlParts(productUrl);
+    }
+
+    //open graph META tags
+    if (seoSettings.OpenGraphMetaTags)
+    {
+        Html.AddHeadCustomParts("<meta property=\"og:type\" content=\"product\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:title\" content=\"" + Html.Encode(Model.Name) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:description\" content=\"" + Html.Encode(Nop.Core.Html.HtmlHelper.StripTags(Model.MetaDescription)) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:image\" content=\"" + Model.DefaultPictureModel.ImageUrl + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:url\" content=\"" + Request.Url.AbsoluteUri + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"og:site_name\" content=\"" + Html.Encode(Model.CurrentStoreName) + "\" />");
+    }
+
+    //Twitter META tags
+    if (seoSettings.TwitterMetaTags)
+    {
+        Html.AddHeadCustomParts("<meta property=\"twitter:card\" content=\"summary\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:site\" content=\"" + Html.Encode(Model.CurrentStoreName) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:title\" content=\"" + Html.Encode(Model.Name) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:description\" content=\"" + Html.Encode(Nop.Core.Html.HtmlHelper.StripTags(Model.MetaDescription)) + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:image\" content=\"" + Model.DefaultPictureModel.ImageUrl + "\" />");
+        Html.AddHeadCustomParts("<meta property=\"twitter:url\" content=\"" + Request.Url.AbsoluteUri + "\" />");
+    }
+    //current category ID
+    int currentCategoryId = 0;
+    if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.RequestContext.RouteData.Values["action"].ToString().Equals("category", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentCategoryId = Convert.ToInt32(Url.RequestContext.RouteData.Values["categoryId"].ToString());
+    }
+
+
+    //current manufacturer ID
+    int currentManufacturerId = 0;
+    if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.RequestContext.RouteData.Values["action"].ToString().Equals("manufacturer", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentManufacturerId = Convert.ToInt32(Url.RequestContext.RouteData.Values["manufacturerId"].ToString());
+    }
+
+
+    //current product ID
+    int currentProductId = 0;
+    if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("product", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.RequestContext.RouteData.Values["action"].ToString().Equals("productdetails", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentProductId = Convert.ToInt32(Url.RequestContext.RouteData.Values["productId"].ToString());
+    }
+}
+
+   
+@Html.Widget("productdetails_after_breadcrumb", Model.Id)
+<section class="noo-page-heading eff">
+    <div class="container">
+        <div class="noo-heading-content">
+            <h1 class="page-title eff">@Model.Name</h1>
+            @Html.Partial("_ProductBreadcrumb", Model.Breadcrumb)
+        </div>
+    </div>
+</section>
+<div class="commerce single-product noo-shop-main">
+    <div class="container">
+        <div class="row">
+            <div class="noo-main col-md-9">
+                <div class="product">
+                    <div class="single-inner">
+                        <div class="images">
+                            <div class="product-simple-image">
+                                @Html.Partial("_ProductDetailsPictures", Model)
+                            </div>
+                        </div>
+                        <div class="summary entry-summary">
+                           @using (Html.BeginRouteForm("Product", new { SeName = Model.SeName }, FormMethod.Post, new { id = "product-details-form" }))
+                           {
+                            <div itemscope itemtype="http://schema.org/Product" data-productid="@Model.Id">
+                                <div class="product-essential">
+                                    @Html.Widget("productdetails_before_pictures", Model.Id)
+                                    <!--product pictures-->
+
+                                    @Html.Widget("productdetails_after_pictures", Model.Id)
+                                    <div class="overview">
+                                        @Html.Partial("_Discontinued", Model)
+                                        <div class="product-name">
+                                            <h1 itemprop="name" class="product_title entry-title">
+                                                @Model.Name
+                                            </h1>
+                                        </div>
+                                        <!--price & add to cart-->
+                                        @{
+                                            var dataDictPrice = new ViewDataDictionary();
+                                            dataDictPrice.TemplateInfo.HtmlFieldPrefix = string.Format("price_{0}", Model.Id);
+                                            @Html.Partial("_ProductPrice", Model.ProductPrice, dataDictPrice)
+                                            if (!String.IsNullOrEmpty(Model.ShortDescription))
+                                            {
+                                                <div class="description">
+                                                    @Html.Raw(Model.ShortDescription)
+                                                </div>
+                                            }
+                                           
+                                            var dataDictAddToCart = new ViewDataDictionary();
+                                            dataDictAddToCart.TemplateInfo.HtmlFieldPrefix = string.Format("addtocart_{0}", Model.Id);
+                                            @Html.Partial("_AddToCart", Model.AddToCart, dataDictAddToCart)
+                                        }
+                                       
+                                        @Html.Partial("_ShareButton", Model)
+                                        @Html.Widget("productdetails_overview_bottom", Model.Id)
+                                    </div>
+                                   
+                                </div>
+                                @Html.Widget("productdetails_before_collateral", Model.Id)
+                                @*<div class="product-collateral">
+                                    @Html.Partial("_ProductSpecifications", Model.ProductSpecifications)
+                                    @Html.Partial("_ProductTags", Model.ProductTags)
+                                </div>
+                                @Html.Action("ProductsAlsoPurchased", "Product", new { productId = Model.Id })
+                                @Html.Action("RelatedProducts", "Product", new { productId = Model.Id })*@
+                            </div>
+                                                }
+                        @Html.Widget("productdetails_bottom", Model.Id)
+                        </div>
+                    </div>
+                    @if (!String.IsNullOrEmpty(Model.FullDescription))
+                    {
+                        <div class="commerce-tabs">
+                            <ul class="nav nav-tabs tabs">
+                                <li>
+                                    <a>Description</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in">
+                                    @Html.Raw(Model.FullDescription)    
+                                </div>
+                            </div>
+                        </div>
+                       
+
+                    }
+                    
+                </div>
+            </div>
+            <div class="noo-sidebar col-md-3">
+               <div class="noo-sidebar-wrap">
+                   <div class="widget commerce widget_product_categories">
+                       @Html.Action("CategoryNavigation", "Catalog", new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
+                   </div>
+               </div>
+            </div>
+        </div>
+        @Html.Widget("productdetails_top", Model.Id)
+        
+    </div>
+</div>

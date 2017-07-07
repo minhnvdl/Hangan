@@ -1,0 +1,11 @@
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.Fedex\Views\Configure.cshtml
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.Fedex\web.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.Fedex\Description.txt
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.Fedex\logo.jpg
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.Fedex\Nop.Plugin.Shipping.Fedex.dll.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.Fedex\Nop.Plugin.Shipping.Fedex.dll
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.Fedex\Nop.Plugin.Shipping.Fedex.pdb
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\Nop.Plugin.Shipping.Fedex.csproj.App.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\Nop.Plugin.Shipping.Fedex.csprojResolveAssemblyReference.cache
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\Nop.Plugin.Shipping.Fedex.dll
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\Nop.Plugin.Shipping.Fedex.pdb

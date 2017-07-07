@@ -1,0 +1,30 @@
+﻿@model IList<ProductOverviewModel>
+
+@using Nop.Web.Models.Catalog;
+
+@if (Model.Count > 0)
+{
+    <div class="pb-11">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="noo-product-grid-wrap commerce product-style">
+                        <div class="noo-sh-title">
+                            <h2>@T("HomePage.Products")</h2>
+                        </div>
+                        <div class="noo-product-grid products row product-grid noo-grid-4">
+
+                            @foreach (var item in Model)
+                            {
+                                <div class="fruit organic-fruits masonry-item col-md-4 col-sm-6">
+                                    @Html.Partial("_ProductBox", item)
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

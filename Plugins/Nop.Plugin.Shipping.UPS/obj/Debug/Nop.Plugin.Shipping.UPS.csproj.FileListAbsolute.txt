@@ -1,0 +1,11 @@
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.UPS\Views\Configure.cshtml
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.UPS\web.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.UPS\Description.txt
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.UPS\logo.jpg
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.UPS\Nop.Plugin.Shipping.UPS.dll.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.UPS\Nop.Plugin.Shipping.UPS.dll
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Presentation\Nop.Web\Plugins\Shipping.UPS\Nop.Plugin.Shipping.UPS.pdb
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.UPS\obj\Debug\Nop.Plugin.Shipping.UPS.csproj.App.config
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.UPS\obj\Debug\Nop.Plugin.Shipping.UPS.csprojResolveAssemblyReference.cache
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.UPS\obj\Debug\Nop.Plugin.Shipping.UPS.dll
+D:\Soluction\anhang.net\nopCommerce_3.90_Source\Plugins\Nop.Plugin.Shipping.UPS\obj\Debug\Nop.Plugin.Shipping.UPS.pdb

@@ -1,0 +1,95 @@
+﻿@model FooterModel
+@using Nop.Core
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Common;
+<footer class="wrap-footer footer-2 colophon wigetized">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 item-footer-four">
+                <div class="widget widget_about">
+                    <div class="noo_about_widget">
+                        <a href="#">
+                            <img src="~/Themes/DefaultClean/Content/images/logo.png" alt="">
+                        </a>
+                        <p>
+                           Chúng tôi cam kết sẽ mang lại dịch vụ tốt nhất cho khách hàng
+                        </p>
+                    </div>
+                </div>
+                <div class="widget widget_noo_social">
+                    <div class="noo_social">
+                        <div class="social-all">
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-google-plus"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-youtube"></a>
+                            <a href="#" class="fa fa-skype"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget_text">
+                    <div class="textwidget">
+                        <div class="copyright">
+                            2017 Hangan.vn.<br>
+                            Designed with <i class="fa fa-heart-o"></i> Sodetech.vn. Powered by <a href="http://www.nopcommerce.com/">nopCommerce</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item-footer-four">
+                <div class="widget widget_text">
+                    <h4 class="widget-title">Contact</h4>
+                    <div class="textwidget">
+                        <h5>Địa chỉ:</h5>
+                        <p>Đà Lạt - Lâm Đồng - Việt Nam</p>
+                        <h5>Điện thoại:</h5>
+                        <p>
+                            <a href="#">0941 714 293</a>
+                        </p>
+                        <h5>Email:</h5>
+                        <p>
+                            <a href="mailto:contact@hangan.vn">
+                                contact@hangan.vn
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item-footer-four">
+                <div class="widget widget_flickr">
+                    <h4 class="widget-title">Fanpage</h4>
+                    <div class="flickr-badge-wrapper"><a class="flickr_badge_image" href="http://farm2.staticflickr.com/1684/24534235809_f40d28d897_b.jpg"><img src="http://farm2.staticflickr.com/1684/24534235809_f40d28d897_s.jpg" alt="_75B8406"></a><a class="flickr_badge_image" href="http://farm4.staticflickr.com/3942/15522706046_724055dc48_b.jpg"><img src="http://farm4.staticflickr.com/3942/15522706046_724055dc48_s.jpg" alt="Marcus Henderson (#75B7971)"></a><a class="flickr_badge_image" href="http://farm4.staticflickr.com/3876/15161220656_6258b3df9a_b.jpg"><img src="http://farm4.staticflickr.com/3876/15161220656_6258b3df9a_s.jpg" alt="Tim Atlas - Lost in the Waiting (#0748)"></a><a class="flickr_badge_image" href="http://farm8.staticflickr.com/7275/13965306323_17d0a8f644_b.jpg"><img src="http://farm8.staticflickr.com/7275/13965306323_17d0a8f644_s.jpg" alt="The Beginning of a New Journey #5694"></a><a class="flickr_badge_image" href="http://farm8.staticflickr.com/7373/10412001266_483a1e4c9d_b.jpg"><img src="http://farm8.staticflickr.com/7373/10412001266_483a1e4c9d_s.jpg" alt="Jackie Martinez (#9963)"></a><a class="flickr_badge_image" href="http://farm4.staticflickr.com/3705/10278343103_dd92d24d07_b.jpg"><img src="http://farm4.staticflickr.com/3705/10278343103_dd92d24d07_s.jpg" alt="Tim Atlas - Lost in the Waiting Album Cover"></a><a class="flickr_badge_image" href="http://farm9.staticflickr.com/8552/10217169844_a83bb0c26f_b.jpg"><img src="http://farm9.staticflickr.com/8552/10217169844_a83bb0c26f_s.jpg" alt="Ortofon Concorde S-120 (#1211)"></a><a class="flickr_badge_image" href="http://farm4.staticflickr.com/3832/9391366956_eae44dee74_b.jpg"><img src="http://farm4.staticflickr.com/3832/9391366956_eae44dee74_s.jpg" alt="Horse #9119"></a><a class="flickr_badge_image" href="http://farm6.staticflickr.com/5529/9163716976_d5d1a0c052_b.jpg"><img src="http://farm6.staticflickr.com/5529/9163716976_d5d1a0c052_s.jpg" alt="5 241"></a></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item-footer-four">
+                <div class="widget widget_noo_openhours">
+                    <h4 class="widget-title">Working time</h4>
+                    <ul class="noo-openhours">
+                        <li>
+                            <span>Thứ 2 -> thứ 6: </span>
+                            <span>08:00am - 08:00pm </span>
+                        </li>
+                        <li>
+                            <span>Thứ 7 &amp; Chủ nhật: </span>
+                            <span>10:00am - 06:00pm </span>
+                        </li>
+                    </ul>
+                </div>
+                @*<div class="widget widget_noo_happyhours">
+                    <h4 class="widget-title">Giờ vàng</h4>
+                    <ul class="noo-happyhours">
+                        <li>
+                            <div>Sản phẩm sẽ được </div>
+                            <div>06:00 am - 08:00 pm daily </div>
+                        </li>
+                    </ul>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>*@
+            </div>
+        </div>
+    </div>
+</footer>

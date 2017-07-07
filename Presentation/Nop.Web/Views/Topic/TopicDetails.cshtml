@@ -1,0 +1,43 @@
+﻿@model TopicModel
+@using Nop.Core.Domain.Seo
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Topics;
+@{
+    var isPopup = ViewBag.IsPopup;
+    if (isPopup == null || isPopup == false)
+    {
+        Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+    }
+
+    if (!Model.IsPasswordProtected)
+    {
+        //title
+        Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Title);
+        //meta
+        Html.AddMetaDescriptionParts(Model.MetaDescription);
+        Html.AddMetaKeywordParts(Model.MetaKeywords);
+    }
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        var topicUrl = Url.RouteUrl("Topic", new { SeName = Model.SeName }, this.Request.Url.Scheme);
+        Html.AddCanonicalUrlParts(topicUrl);
+    }
+
+    //page class
+    Html.AppendPageCssClassParts("html-topic-page");
+}
+<section class="noo-page-heading eff">
+    <div class="container">
+        <div class="noo-heading-content">
+            <h1 class="page-title eff">@Model.Title</h1>
+            <div class="noo-page-breadcrumb eff">
+                <a href="/" class="home">Home</a>/<span>@Model.Title</span>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="page topic-page main" id="ph-topic">
+        @Html.Raw(Model.Body)
+</div>

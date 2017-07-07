@@ -1,0 +1,53 @@
+﻿<header class="noo-header header-2 header-static">
+    @Html.Widget("header")
+    <div class="noo-topbar">
+        <div class="container">
+            <div class="top-header">
+                <ul>
+                    <li>
+                        <span><i class="fa fa-phone"></i></span>
+                        <a href="#">0941 714 293</a>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-envelope"></i></span>
+                        <a href="mailto:contact@hangan.vn">contact@hangan.vn</a>
+                    </li>
+                </ul>
+                @Html.Action("HeaderLinks", "Common")
+                
+               
+                       
+                     
+            </div>
+
+        </div>
+    </div>
+    <div class="navbar-wrapper">
+        <div class="navbar" style="margin:0">
+            <div class="container">
+                <div class="menu-position">
+                    <div class="navbar-header pull-left">
+                        <h1 class="sr-only">Ăn Hàng</h1>
+                        <div class="noo_menu_canvas">
+                            <div class="btn-search noo-search topbar-has-search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <div data-target=".nav-collapse" class="btn-navbar">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        @Html.Action("Logo", "Common")
+                    </div>
+                    <div class="pull-right noo-main-menu">
+                        @Html.Action("TopMenu", "Catalog")
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="search-box store-search-box">
+                @Html.Action("SearchBox", "Catalog")
+            </div>*@
+    </div>
+</header>
